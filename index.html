@@ -7,12 +7,127 @@
   <title>R2C - Pariwisata Budaya</title>
 
   <!-- Our Style -->
-  <link rel="stylesheet" href="dist/css/style.css">
+  <link rel="stylesheet" href="src/input.css">
   <link rel="stylesheet" href="dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script>
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </head>
 
 <body>
-  <h1 class="text-4xl bg-slate-200">Hello, World!</h1>
+
+  <header id="header" class="bg-white">
+    <!-- <video autoplay loop muted plays-inline class="absolute lg:w-full -z-10">
+      <source src="dist/assets/video/vid1.mp4" type="video/mp4" class="h-\[100vh\]">
+    </video> -->
+
+    <!-- Navbar Start -->
+    <nav class="absolute left-0 top-0 flex w-full items-center bg-white dark:bg-dark">
+      <div class="container mx-auto">
+        <div class="relative flex items-center justify-between bg-transparent bg-opacity-0">
+          <div class="flex items-center lg:py-0 px-4 py-3 ">
+            <a href="" class="block py-0 text-lg font-bold text-terniary">Pariwisata Budaya <span id="year"></span></a>
+          </div>
+          <div class="flex items-center xl:pr-6 dark:pr-7">
+            <button id="hamburger" type="button" name="hamburger" class="absolute right-4 block lg:hidden">
+              <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+            </button>
+
+            <div id="nav-menu"
+              class="absolute right-0 top-full hidden w-full max-w-[100%] h-[91vh] lg:h-full rounded-none bg-white py-6 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:lg:bg-transparent">
+              <ul class="block lg:flex">
+                <li class="group lg:mb-0 mb-4">
+                  <a href="#beranda"
+                    class="lg:mx-6 mx-4 flex xl:h-10 py-3 h-14 text-base group-hover:text-primary group-hover:border-b-4 group-hover:border-primary dark:text-white">Beranda</a>
+                </li>
+                <li class="group lg:mb-0 mb-4">
+                  <a href="#destinasi"
+                    class="lg:mx-6 mx-4 flex xl:h-10 py-3 h-14 text-base group-hover:text-primary dark:text-white group-hover:border-b-4 group-hover:border-primary">Destinasi</a>
+                </li>
+                <li class="group lg:mb-0 mb-5">
+                  <a href="#jelajah"
+                    class="lg:mx-6 mx-4 flex xl:h-10 py-3 h-14 text-base group-hover:text-primary dark:text-white group-hover:border-b-4 group-hover:border-primary">Jelajah</a>
+                </li>
+                <li class="group lg:mb-0 mb-5">
+                  <a href="#sejarah_budaya"
+                    class="lg:mx-6 mx-4 flex xl:h-10 py-3 h-14 text-base group-hover:text-primary dark:text-white group-hover:border-b-4 group-hover:border-primary">Sejarah
+                    dan
+                    Budaya</a>
+                </li>
+                <li class="group lg:border-r-4 lg:mb-0 mb-5">
+                  <a href="#peta"
+                    class="lg:mx-6 mx-4 flex xl:h-10 py-3 h-12 text-base group-hover:text-primary dark:text-white group-hover:border-b-4 group-hover:border-primary">Peta
+                    Panduan</a>
+                </li>
+                <li class="group lg:my-0 my-8">
+                  <div class="flex items-center px-5 dark:px-5">
+                    <input type="checkbox" name="dark-toggle" id="dark-toggle" class="hidden" />
+                    <label for="dark-toggle">
+                      <div class="rounded-full bg-white lg:px-3 lg:py-2 lg:h-10 py-3 px-4 shadow-lg">
+                        <i
+                          class="icon-theme fa-regular fa-sun origin-bottom-left transition duration-300 ease-in-out"></i>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+  </header>
+
+  <!-- Hero Start -->
+  <section id="hero" class="pt-10 overflow-y-hidden max-h-[100vh]">
+    <div class="container mx-auto">
+      <div class="flex flex-row h-[100vh] gap-10">
+        <div class="xl:w-[80%] xl:self-center px-5 py-36">
+          <p class="xl:mt-5 leading-relaxed text-primary">
+            Indonesia Kaya
+          </p>
+
+          <h1 class="xl:text-4xl text-2xl font-bold mt-3 lg:mb-8 mb-5">Telusuri Pesona dan
+            Keberagaman Budaya Indonesia yang Memukau.</h1>
+
+          <a href="#"
+            class="block bg-primary lg:w-[40%] p-2 w-[55%] text-sm text-center rounded-3xl text-white xl:font-semibold">Jelajahi
+            Sekarang</a>
+        </div>
+
+        <div class="lg:flex flex-wrap w-full h-[100vh] rotate-[6deg] -z-10 hidden gap-5">
+          <div class="grid grid-cols-2 gap-4 w-full py-2 h-28">
+            <div class="col-span-1 bg-slate-300 rounded-lg"></div>
+            <div class="col-span-1 bg-slate-300 rounded-lg"></div>
+          </div>
+          <div class="grid grid-cols-2 gap-5 w-full h-[70vh]">
+            <div class="row-span-2 bg-slate-300 rounded-lg"></div>
+            <div class="col-span-1 bg-slate-300 rounded-lg"></div>
+            <div class="col-span-1 bg-slate-300 rounded-lg"></div>
+          </div>
+          <div class="grid grid-rows-2 gap-4 w-full py-2 h-[40vh]">
+            <div class="col-span-2 bg-slate-300 rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero End -->
 
   <!-- Our Script -->
   <script src="dist/js/script.js"></script>
